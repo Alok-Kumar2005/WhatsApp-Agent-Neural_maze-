@@ -4,11 +4,12 @@
 conda create -n whatsapp python=3.12 -y
 conda activate whatsapp
 pip install -r requriements.txt
+python setup.py install
 ```
 
 
 ## Use of Model
 - Groq -> Text Generation , Image Understanding  , STT Module(whisper model)
-- drant -> for long term memory
+- qdrant -> for long term memory ( used to store chats in form of vectors)
 - Elevenlabs -> used to TTS( text to speech ) module
-- together -> for image generation ( we use flux model )
+- together.ai -> for image generation ( we use flux model )
