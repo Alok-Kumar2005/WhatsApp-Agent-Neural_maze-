@@ -1,0 +1,20 @@
+chainlit
+elevenlabs
+fastapi[standard]
+groq
+langchain-community
+langchain-groq
+langchain
+pydantic
+together
+langgraph
+langchain-google-genai
+pydantic-settings
+pre-commit 
+supabase
+# langchain-checkpoint-duckdb
+duckdb
+langgraph-checkpoint-sqlite
+aiosqlite
+sentence-transformers
+qdrant-client
