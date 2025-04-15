@@ -84,7 +84,13 @@ class TextToImage:
             raise TextToImageError(f"Failed to generate image: {str(e)}") from e
 
     async def create_scenario(self, chat_history: list = None) -> ScenarioPrompt:
-        """Creates a first-person narrative scenario and corresponding image prompt based on chat history."""
+        """Creates a first-person narrative scenario and corresponding image prompt based on chat history.
+        Takes recent chat history as input
+        Analyzes the conversation context
+        Generates both a narrative response and an image prompt
+        Returns this as a ScenarioPrompt object with two fields:
+            -narrative: A first-person story/description based on the conversation
+            -image_prompt: A specially crafted prompt optimized for image generation"""
         try:
             formatted_history = "\n".join([f"{msg.type.title()}: {msg.content}" for msg in chat_history[-5:]])
 
@@ -116,7 +122,11 @@ class TextToImage:
             raise TextToImageError(f"Failed to create scenario: {str(e)}") from e
 
     async def enhance_prompt(self, prompt: str) -> str:
-        """Enhance a simple prompt with additional details and context."""
+        """Enhance a simple prompt with additional details and context.
+        Takes a simple text prompt from the user
+        Expands and refines it to be more effective for image generation
+        Adds details, style descriptions, and contextual elements
+        Returns the enhanced prompt as a string"""
         try:
             self.logger.info(f"Enhancing prompt: '{prompt}'")
 
